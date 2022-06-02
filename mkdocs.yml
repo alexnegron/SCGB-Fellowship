@@ -1,0 +1,54 @@
+site_name: SCGB Notes
+
+theme:
+    name: material
+    palette:
+
+    # Light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: gray
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+
+    # Dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: gray
+      accent: blue
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+    
+
+# Extensions
+markdown_extensions:
+  - footnotes
+  - mdx_math
+  # - attr_list
+  - pymdownx.arithmatex:
+       generic: true
+  # - pymdownx.superfences
+  # - pymdownx.details
+  # - pymdownx.magiclink
+  # - pymdownx.tasklist:
+  #     custom_checkbox: true
+#  - pymdownx.emoji:
+#      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  - admonition
+  - nl2br
+  - pymdownx.details
+  - toc:
+      permalink: true
+
+extra_javascript:
+  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+
+
+plugins:
+  - search
+  - roamlinks 
+  - callouts
+  - embed_file
