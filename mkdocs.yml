@@ -1,5 +1,6 @@
 site_name: SCGB Notes
 repo_name: alexnegron/SCGB-Fellowship
+repo_url: https://github.com/alexnegron/SCGB-Fellowship
 edit_uri: ""
 theme:
     name: material
