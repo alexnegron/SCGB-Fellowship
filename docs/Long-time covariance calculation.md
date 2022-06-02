@@ -14,7 +14,8 @@ $$
 $$
 
 # Long-time covariance calculation
-In [[Three unit rate model|the note defining the rate model]], we wrote down a linear SDE characterizing the dynamics of the fluctuations $\delta \mathbf{r}.$ This SDE is given by: 
+
+In [[Three unit rate model|the note defining the rate model]], we wrote down a linear SDE characterizing the dynamics of the fluctuations $\delta \mathbf{r}.$ This SDE is given by
 
 $$
 \tau_i \dot{r}_i(t) = - r_i(t) + \bra{\mu_i + \sum_{j\in\set{E_1,E_2,I}}W_{ij}r_j(t)  + \sqrt{2\sigma_i}\xi_i(t)}_+, \qquad \text{for }i \in \set{E_1,E_2,I}
