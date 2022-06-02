@@ -1,7 +1,10 @@
 site_name: SCGB Notes
-
+repo_name: alexnegron/SCGB-Fellowship
+edit_uri: ""
 theme:
     name: material
+    icon:
+      repo: fontawesome/brands/git-alt 
     palette:
 
     # Light mode
@@ -53,3 +56,4 @@ plugins:
   - roamlinks 
   - callouts
   - embed_file
+  - git-revision-date
