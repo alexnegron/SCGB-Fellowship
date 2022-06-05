@@ -15,7 +15,7 @@ $$
 
 # Three unit rate model
 
-## Model.
+## Three-unit model.
 
 Neurons $\set{E_1,E_2,E_I}$ evolve with dynamics described by
 
@@ -33,7 +33,16 @@ where:
 - $\mu_i$ is stimulus input to $i$ 
 - $\bra{\cdot}_+ : \mathbb{R} \to \mathbb{R}$ is defined via $\bra{\cdot}\equiv \max\set{\cdot, 0}$ 
 
-We may drop the $\bra{\cdot}_+$ under the assumption that the threshold is never sampled for sufficiently strong inputs. In vector form, these equations are 
+We may drop the $\bra{\cdot}_+$ under the assumption that the threshold is never sampled for sufficiently strong inputs.
+
+### Weak $E_1 \leftrightarrow E_2$  connection
+
+To implement a weak $E_1 \leftrightarrow E_2$ connection, we introduce a parameter $\alpha \in \pa{0,1}$  which scales inter-excitatory connections $W_{E_1E_2}$ , $W_{E_2E_1}$  with respect to the intra-excitatory connections $W_{E_1E_1}, W_{E_2E_2}$ respectively. Refer to the following sketch of the network setup for the three unit $\set{E_1,E_2,I}$ case: 
+
+![[img/sketch-three_unit_setup.png|300]]
+
+
+In vector form, the dynamical equations are 
 
 
 $$\begin{aligned}
@@ -98,4 +107,57 @@ $$
 $$
 
 ^e90dac
+
+## Four-unit model.
+
+The modeling setup for the three-unit network generalizes to $N_E$ excitatory and $N_I$ inhibitory neurons for a total of $N = N_E + N_I$ neurons. We will also be considering an $N=4$  neuron model with $\set{E_1,E_2,I_1,I_2}$ as the neurons. 
+
+![[img/sketch-four_unit_setup.png|300]]
+
+The dynamical equations for the four-unit model are identical to those of the three-unit model, only now we have additional variables to account for each of $I_1, I_2$. Note that the weight matrix is
+
+$$
+\mathbf{W} = 
+\begin{bmatrix}
+	W_{E_1E_1} & \alpha W_{E_2E_2} & - W_{E_1I_1} & -\beta W_{E_2I_2} \\
+	\alpha W_{E_1E_1} & W_{E_2E_2} & - \beta W_{E_1I_1} & - W_{E_2I_2} \\
+	W_{I_1E_1} & \gamma W_{I_2E_2} & - W_{I_1I_1} & -\zeta W_{I_2I_2} \\
+	\gamma W_{I_1E_1} & W_{I_2E_2} & - \zeta W_{I_1I_1} & -W_{I_2I_2}
+\end{bmatrix}.
+$$
+
+## Stability analysis
+
+^6c6a55
+
+For simplicity, assume $\boldsymbol{\tau}=\mathbf{1}$ and $\boldsymbol{\mu} = 0$. Assume there is no noise in the system, so that we are solving 
+
+$$
+\mathbf{\dot{r}}(t) = \pa{-\mathbf{1}+\mathbf{W}}\mathbf{r}(t).
+$$
+
+Since this is a linear equation, we seek solutions of the form 
+
+$$
+\mathbf{r}(t) = \mathbf{v}e^{\lambda t}, \qquad \mathbf{v} \in \mathbb{R}^{3}\text{ is a constant vector}
+$$
+
+Then: 
+
+$$
+	\pa{-\mathbf{1}+\mathbf{W}}\mathbf{v}e^{\lambda t} 
+	= 
+	\pa{-\mathbf{1}+ \mathbf{W}}\mathbf{r}(t)=\mathbf{\dot{r}}(t)
+	= 
+	\lambda\mathbf{v} e^{\lambda t} 
+	\implies  
+	\pa{-\mathbf{1}+\mathbf{W}}\mathbf{v}=\lambda \mathbf{v},
+$$
+that is, $\lambda$ must be an eigenvalue of $-\mathbf{1} + \mathbf{W}$, and $\mathbf{v}$ a corresponding eigenvector. The eigenvalues are obtained by solving 
+
+$$
+	\pa{-\mathbf{1}+\mathbf{W}}\mathbf{v} - \lambda \mathbf{v} = \pa{-\mathbf{1} + \mathbf{W} - \lambda \mathbf{1}}\mathbf{v} = 0.
+$$
+
+
 
