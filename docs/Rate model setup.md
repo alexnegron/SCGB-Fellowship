@@ -39,7 +39,7 @@ We may drop the $\bra{\cdot}_+$ under the assumption that the threshold is never
 
 To implement a weak $E_1 \leftrightarrow E_2$ connection, we introduce a parameter $\alpha \in \pa{0,1}$  which scales inter-excitatory connections $W_{E_1E_2}$ , $W_{E_2E_1}$  with respect to the intra-excitatory connections $W_{E_1E_1}, W_{E_2E_2}$ respectively. Refer to the following sketch of the network setup for the three unit $\set{E_1,E_2,I}$ case: 
 
-![[img/sketch-three_unit_setup.png]]
+![img/sketch-three_unit_setup.png](img/sketch-three_unit_setup.png)
 
 
 In vector form, the dynamical equations are 
