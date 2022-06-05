@@ -35,11 +35,11 @@ where:
 
 We may drop the $\bra{\cdot}_+$ under the assumption that the threshold is never sampled for sufficiently strong inputs.
 
-### Weak $E_1 \leftrightarrow E_2$  connection
+### Weak cross-excitatory connection.
 
 To implement a weak $E_1 \leftrightarrow E_2$ connection, we introduce a parameter $\alpha \in \pa{0,1}$  which scales inter-excitatory connections $W_{E_1E_2}$ , $W_{E_2E_1}$  with respect to the intra-excitatory connections $W_{E_1E_1}, W_{E_2E_2}$ respectively. Refer to the following sketch of the network setup for the three unit $\set{E_1,E_2,I}$ case: 
 
-![[img/sketch-three_unit_setup.png|300]]
+![[img/sketch-three_unit_setup.png]]
 
 
 In vector form, the dynamical equations are 
@@ -112,7 +112,7 @@ $$
 
 The modeling setup for the three-unit network generalizes to $N_E$ excitatory and $N_I$ inhibitory neurons for a total of $N = N_E + N_I$ neurons. We will also be considering an $N=4$  neuron model with $\set{E_1,E_2,I_1,I_2}$ as the neurons. 
 
-![[img/sketch-four_unit_setup.png|300]]
+![[img/sketch-four_unit_setup.png]]
 
 The dynamical equations for the four-unit model are identical to those of the three-unit model, only now we have additional variables to account for each of $I_1, I_2$. Note that the weight matrix is
 
