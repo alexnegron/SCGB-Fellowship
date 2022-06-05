@@ -31,7 +31,6 @@ theme:
 markdown_extensions:
   - footnotes
   - mdx_math
-  # - attr_list
   - pymdownx.arithmatex:
        generic: true
   # - pymdownx.superfences
@@ -47,6 +46,8 @@ markdown_extensions:
       custom_checkbox: true
   - toc:
       permalink: true
+  - attr_list
+  - md_in_html
 
 extra_javascript:
   - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML
